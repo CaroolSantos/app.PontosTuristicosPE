@@ -1,0 +1,72 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Turismo PE</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="background-page" >
+  <ion-searchbar [showCancelButton]="true" placeholder="O que você procura?" (ionInput)="updateSearch()" (ionCancel)="dismiss()"></ion-searchbar>
+  <ion-searchbar [showCancelButton]="true" placeholder="Informe a cidade" (ionInput)="updateSearch()" (ionCancel)="dismiss()"></ion-searchbar>
+  <br>
+  <button ion-button block icon-left class="btn">
+    <ion-icon name="search" ></ion-icon>Pesquisar</button>
+  <br>
+  <ion-row >
+    <ion-col align-self-stretch col-6 col-md-6 col-lg-3 col-xl-3>
+      <ion-card (click)="abrirLista()">
+        <img src="assets/feiras.jpg" />
+        <div class="card-title">
+          <b>Feiras de Artesanato</b>
+        </div>
+      </ion-card>
+    </ion-col>
+
+    <ion-col align-self-stretch col-6 col-md-6 col-lg-3 col-xl-3>
+      <ion-card>
+        <img src="assets/hospital.jpg" />
+        <div class="card-title">
+          <b>Hospitais</b>
+        </div>
+      </ion-card>
+    </ion-col>
+
+    <ion-col align-self-stretch col-6 col-md-6 col-lg-3 col-xl-3>
+      <ion-card>
+        <img src="assets/praia.jpg" />
+        <div class="card-title">
+          <b>Praias</b>
+        </div>
+      </ion-card>
+    </ion-col>
+
+    <ion-col align-self-stretch col-6 col-md-6 col-lg-3 col-xl-3>
+      <ion-card>
+        <img src="assets/museu.jpg" />
+        <div class="card-title">
+          <b>Museu</b>
+        </div>
+      </ion-card>
+    </ion-col>
+
+    <ion-col align-self-stretch col-6 col-md-6 col-lg-3 col-xl-3>
+      <ion-card>
+        <img src="assets/igreja.jpg" />
+        <div class="card-title">
+          <b>Igrejas</b>
+        </div>
+      </ion-card>
+    </ion-col>
+
+    <ion-col align-self-stretch col-6 col-md-6 col-lg-3 col-xl-3>
+      <ion-card>
+        <img src="assets/hotel.jpg" />
+        <div class="card-title">
+          <b>Hospedagem</b>
+        </div>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-content>
