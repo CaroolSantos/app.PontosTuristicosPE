@@ -29,6 +29,9 @@
         <property name="hbm2ddl.auto">validate</property>
 
         <mapping class="model.User"></mapping>
+        <mapping class="model.Category"></mapping>
+        <mapping class="model.Place"></mapping>
+        <mapping class="model.City"></mapping>
 
     </session-factory>
 </hibernate-configuration>
