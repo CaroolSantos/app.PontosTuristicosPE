@@ -1,0 +1,23 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Turismo PE</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="background-page">
+    <ion-searchbar [showCancelButton]="true" placeholder="Feiras de Artesanato" (ionInput)="updateSearch()" (ionCancel)="dismiss()"></ion-searchbar>
+    <br>
+    <ion-list>
+        <ion-item>
+          <h2>Mercado de Artesanato do Alto da Sé</h2>
+          <ion-icon name="locate">
+              <p>Rua Bispo Coutinho, S/N, Carmo, Olinda</p>
+          </ion-icon>
+          <p>I've had a pretty messed up day. If we just...</p>
+        </ion-item>
+      </ion-list>
+
+</ion-content>
