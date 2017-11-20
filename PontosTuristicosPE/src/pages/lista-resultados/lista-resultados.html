@@ -8,15 +8,15 @@
 
 
 <ion-content class="background-page">
-    <ion-searchbar [showCancelButton]="true" placeholder="Feiras de Artesanato" (ionInput)="updateSearch()" (ionCancel)="dismiss()"></ion-searchbar>
+    <ion-searchbar [showCancelButton]="true" placeholder="Digite um local" (ionInput)="updateSearch()" (ionCancel)="dismiss()"></ion-searchbar>
+    <button ion-button block icon-left class="btn">
+      <ion-icon name="search" ></ion-icon>Pesquisar</button>
     <br>
     <ion-list>
-        <ion-item>
-          <h2>Mercado de Artesanato do Alto da Sé</h2>
-          <ion-icon name="locate">
-              <p>Rua Bispo Coutinho, S/N, Carmo, Olinda</p>
-          </ion-icon>
-          <p>I've had a pretty messed up day. If we just...</p>
+        <ion-item  *ngFor="let local of resultados" >
+          <h2 text-wrap><b>{{local.name}}</b></h2>
+          <p>{{local.description}}</p>
+          <p><ion-icon name="pin" item-start></ion-icon>{{local.address}}</p>
         </ion-item>
       </ion-list>
 

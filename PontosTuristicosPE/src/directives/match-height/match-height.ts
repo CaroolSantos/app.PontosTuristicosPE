@@ -18,10 +18,12 @@ export class MatchHeightDirective implements AfterViewChecked {
   }
 
   constructor(private el: ElementRef) {
+    console.log("diretiva construtor");
   }
 
   ngAfterViewChecked() {
     // call our matchHeight function here later
+    console.log("diretiva after view checked");
     this.matchHeight(this.el.nativeElement, this.myMatchHeight);
   }
 

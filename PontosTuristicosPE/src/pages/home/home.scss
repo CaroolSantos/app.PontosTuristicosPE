@@ -1,10 +1,17 @@
 page-home {
     .background-page {
-        
+          ion-col{
+            padding:0px;
+          }
           ion-card {
             position: relative;
             text-align: center;
-        
+            margin:5px auto;
+            width: 90%;
+            
+            img{
+              height: 100%;
+            }
           }
         
           .card-title {

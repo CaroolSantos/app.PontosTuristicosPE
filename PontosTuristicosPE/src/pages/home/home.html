@@ -7,25 +7,43 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content class="background-page" >
+<ion-content class="background-page">
   <ion-searchbar [showCancelButton]="true" placeholder="O que você procura?" (ionInput)="updateSearch()" (ionCancel)="dismiss()"></ion-searchbar>
   <ion-searchbar [showCancelButton]="true" placeholder="Informe a cidade" (ionInput)="updateSearch()" (ionCancel)="dismiss()"></ion-searchbar>
   <br>
   <button ion-button block icon-left class="btn">
-    <ion-icon name="search" ></ion-icon>Pesquisar</button>
+    <ion-icon name="search"></ion-icon>Pesquisar</button>
   <br>
-  <ion-row >
+  <ion-row myMatchHeight="card">
     <ion-col align-self-stretch col-6 col-md-6 col-lg-3 col-xl-3>
-      <ion-card (click)="abrirLista()">
-        <img src="assets/feiras.jpg" />
+      <ion-card (click)="abrirLista(13)">
+        <img src="assets/hotel.jpg" />
         <div class="card-title">
-          <b>Feiras de Artesanato</b>
+          <b>Hospedagem</b>
         </div>
       </ion-card>
     </ion-col>
 
     <ion-col align-self-stretch col-6 col-md-6 col-lg-3 col-xl-3>
-      <ion-card>
+      <ion-card (click)="abrirLista(15)">
+        <img src="assets/locadora-veiculo.jpg" />
+        <div class="card-title">
+          <b>Locadora de Veículo</b>
+        </div>
+      </ion-card>
+    </ion-col>
+
+    <ion-col align-self-stretch col-6 col-md-6 col-lg-3 col-xl-3>
+      <ion-card (click)="abrirLista(24)">
+        <img src="assets/agencia-turismo.jpg" />
+        <div class="card-title">
+          <b>Agência de Turismo</b>
+        </div>
+      </ion-card>
+    </ion-col>
+
+    <ion-col align-self-stretch col-6 col-md-6 col-lg-3 col-xl-3>
+      <ion-card (click)="abrirLista(14)">
         <img src="assets/hospital.jpg" />
         <div class="card-title">
           <b>Hospitais</b>
@@ -34,7 +52,25 @@
     </ion-col>
 
     <ion-col align-self-stretch col-6 col-md-6 col-lg-3 col-xl-3>
-      <ion-card>
+      <ion-card (click)="abrirLista(21)">
+        <img src="assets/restaurantes.jpg" />
+        <div class="card-title">
+          <b>Restaurantes</b>
+        </div>
+      </ion-card>
+    </ion-col>
+
+    <ion-col align-self-stretch col-6 col-md-6 col-lg-3 col-xl-3>
+      <ion-card (click)="abrirLista(5)">
+        <img src="assets/bares.jpg" />
+        <div class="card-title">
+          <b>Bares e Cachaçarias</b>
+        </div>
+      </ion-card>
+    </ion-col>
+
+    <ion-col align-self-stretch col-6 col-md-6 col-lg-3 col-xl-3>
+      <ion-card (click)="abrirLista(4)">
         <img src="assets/praia.jpg" />
         <div class="card-title">
           <b>Praias</b>
@@ -43,30 +79,111 @@
     </ion-col>
 
     <ion-col align-self-stretch col-6 col-md-6 col-lg-3 col-xl-3>
-      <ion-card>
+      <ion-card (click)="abrirLista(18)">
+        <img src="assets/passeios-nauticos.jpg" />
+        <div class="card-title">
+          <b>Passeios Nauticos</b>
+        </div>
+      </ion-card>
+    </ion-col>
+
+    <ion-col align-self-stretch col-6 col-md-6 col-lg-3 col-xl-3>
+      <ion-card (click)="abrirLista(3)">
+        <img src="assets/feiras.jpg" />
+        <div class="card-title">
+          <b>Artesanato</b>
+        </div>
+      </ion-card>
+    </ion-col>
+
+    <ion-col align-self-stretch col-6 col-md-6 col-lg-3 col-xl-3>
+      <ion-card (click)="abrirLista(16)">
+        <img src="assets/mercados.jpg" />
+        <div class="card-title">
+          <b>Mercados e Feiras Livres</b>
+        </div>
+      </ion-card>
+    </ion-col>
+
+    <ion-col align-self-stretch col-6 col-md-6 col-lg-3 col-xl-3>
+      <ion-card (click)="abrirLista(17)">
         <img src="assets/museu.jpg" />
         <div class="card-title">
-          <b>Museu</b>
+          <b>Museus e Centros Culturais</b>
         </div>
       </ion-card>
     </ion-col>
 
     <ion-col align-self-stretch col-6 col-md-6 col-lg-3 col-xl-3>
-      <ion-card>
-        <img src="assets/igreja.jpg" />
+      <ion-card (click)="abrirLista(8)">
+        <img src="assets/teatro.jpg" />
         <div class="card-title">
-          <b>Igrejas</b>
+          <b>Cinemas e Teatros</b>
         </div>
       </ion-card>
     </ion-col>
 
     <ion-col align-self-stretch col-6 col-md-6 col-lg-3 col-xl-3>
-      <ion-card>
-        <img src="assets/hotel.jpg" />
+      <ion-card (click)="abrirLista(7)">
+        <img src="assets/casa-noturna.jpeg" />
         <div class="card-title">
-          <b>Hospedagem</b>
+          <b>Casas Noturnas</b>
         </div>
       </ion-card>
     </ion-col>
+
+    <ion-col align-self-stretch col-6 col-md-6 col-lg-3 col-xl-3>
+      <ion-card (click)="abrirLista(19)">
+        <img src="assets/praças.jpg" />
+        <div class="card-title">
+          <b>Praças e Parques</b>
+        </div>
+      </ion-card>
+    </ion-col>
+
+    <ion-col align-self-stretch col-6 col-md-6 col-lg-3 col-xl-3>
+      <ion-card (click)="abrirLista(22)">
+        <img src="assets/shopping.jpg" />
+        <div class="card-title">
+          <b>Shopping Center</b>
+        </div>
+      </ion-card>
+    </ion-col>
+
+    <ion-col align-self-stretch col-6 col-md-6 col-lg-3 col-xl-3>
+      <ion-card (click)="abrirLista(12)">
+        <img src="assets/eventos.jpg" />
+        <div class="card-title">
+          <b>Eventos e Agências de Turismo</b>
+        </div>
+      </ion-card>
+    </ion-col>
+
   </ion-row>
+  <ion-item-divider text-center>
+    <b>Outras Categorias</b>
+  </ion-item-divider>
+
+  <ion-list>
+    <button ion-item (click)="abrirLista(10)">
+      Consulado
+    </button>
+
+    <button ion-item (click)="abrirLista(20)">
+      Religião
+    </button>
+
+    <button ion-item (click)="abrirLista(11)">
+      Clubes de Futebol
+    </button>
+
+    <button ion-item (click)="abrirLista(9)">
+      Companhias Aéreas
+    </button>
+
+    <button ion-item (click)="abrirLista(23)">
+      Trilhas Ecológicas
+    </button>
+  </ion-list>
+
 </ion-content>

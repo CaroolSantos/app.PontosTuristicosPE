@@ -2,5 +2,11 @@
   "name": "PontosTuristicosPE",
   "app_id": "",
   "type": "ionic-angular",
-  "integrations": {}
+  "integrations": {},
+  "proxies": [
+    {
+      "path": "/api",
+      "proxyUrl": "https://turismope.herokuapp.com/api"
+    }
+  ]
 }
