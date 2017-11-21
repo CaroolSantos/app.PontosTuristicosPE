@@ -9,8 +9,15 @@
 
 <ion-content class="background-page">
   <ion-searchbar [showCancelButton]="true" placeholder="O que você procura?" (ionInput)="updateSearch()" (ionCancel)="dismiss()"></ion-searchbar>
-  <ion-searchbar [showCancelButton]="true" placeholder="Informe a cidade" (ionInput)="updateSearch()" (ionCancel)="dismiss()"></ion-searchbar>
-  <br>
+  <ion-searchbar [showCancelButton]="true" placeholder="Informe a cidade" [(ngModel)]="searchTerm" [formControl]="searchControl" (ionCancel)="dismiss()"></ion-searchbar>
+
+  <ion-list *ngIf="searchTerm.length>2 && cidadeSelecionada==false">
+    <ion-item *ngFor="let cidade of cidades" (click)="atualizaCidade(cidade)">
+      {{cidade.nome}}
+    </ion-item>
+  </ion-list>
+
+
   <button ion-button block icon-left class="btn">
     <ion-icon name="search"></ion-icon>Pesquisar</button>
   <br>
