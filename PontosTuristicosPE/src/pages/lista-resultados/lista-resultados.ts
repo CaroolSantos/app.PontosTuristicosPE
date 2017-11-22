@@ -11,6 +11,7 @@ export class ListaResultadosPage {
   id_categoria: any;
   loader: any;
   resultados: any;
+  id_cidade:any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public listagemServico: ListaResultadosProvider, public loadingCtrl: LoadingController) {
   }
@@ -18,22 +19,44 @@ export class ListaResultadosPage {
   ionViewDidLoad() {
     this.presentLoading();
     this.id_categoria = this.navParams.get("id");
-    console.log('ionViewDidLoad ListaResultadosPage');
+    this.id_cidade = this.navParams.get("id_cidadeSelecionada");
 
-    this.listagemServico.abrirListaLocais(this.id_categoria)
-    .subscribe(
-      data => {
-        this.resultados = data;
+    if(this.id_cidade==null){
+      console.log('id_cidade null');
       
-        console.log('resultado ' + JSON.stringify(this.resultados));
-        this.loader.dismiss();
-      },
-      err => {
-        console.log('[ERROR] ' + err);
-        this.loader.dismiss();
-      },
-      () => console.log("lista de locais carregada")
-      );
+          this.listagemServico.abrirListaLocais(this.id_categoria)
+          .subscribe(
+            data => {
+              this.resultados = data;
+            
+              console.log('resultado ' + JSON.stringify(this.resultados));
+              this.loader.dismiss();
+            },
+            err => {
+              console.log('[ERROR] ' + err);
+              this.loader.dismiss();
+            },
+            () => console.log("lista de locais carregada")
+            );
+    }else{
+      console.log('id_cidade NOT null');
+
+      this.listagemServico.abrirListaLocaisCidade(this.id_categoria, this.id_cidade)
+      .subscribe(
+        data => {
+          this.resultados = data;
+        
+          console.log('resultado ' + JSON.stringify(this.resultados));
+          this.loader.dismiss();
+        },
+        err => {
+          console.log('[ERROR] ' + err);
+          this.loader.dismiss();
+        },
+        () => console.log("lista de locais carregada")
+        );
+    }
+    
   }
 
   presentLoading() {

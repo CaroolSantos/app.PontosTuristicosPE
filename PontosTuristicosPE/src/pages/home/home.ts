@@ -16,6 +16,7 @@ export class HomePage {
   cidades: any;
   cidadeSelecionada: boolean=false;
   exibirLista: boolean=true;
+  id_cidadeSelecionada: any;
 
   constructor(public navCtrl: NavController, public listagemServico: ListaResultadosProvider) {
     this.searchControl = new FormControl();
@@ -28,6 +29,8 @@ export class HomePage {
     this.searchControl.valueChanges.debounceTime(400).subscribe(search => {
       if(this.exibirLista==false){
         this.cidadeSelecionada=false;
+        this.id_cidadeSelecionada=null;
+        console.log('cidade null' + this.id_cidadeSelecionada);
       }
       if(this.cidadeSelecionada){
         this.exibirLista=false;
@@ -48,6 +51,8 @@ export class HomePage {
   atualizaCidade(cidade){
     this.searchTerm=cidade.nome;
     this.cidadeSelecionada=true;
+    this.id_cidadeSelecionada=cidade.id_cidade;
+    console.log('cidade selecionada' + this.id_cidadeSelecionada);
 
     if(this.exibirLista==false){
       this.exibirLista=true;
@@ -55,7 +60,7 @@ export class HomePage {
   }
 
   abrirLista(id_tipocategoria) {
-    this.navCtrl.push(ListaResultadosPage, { id: id_tipocategoria })
+    this.navCtrl.push(ListaResultadosPage, { id: id_tipocategoria, id_cidadeSelecionada: this.id_cidadeSelecionada })
   }
 
 }

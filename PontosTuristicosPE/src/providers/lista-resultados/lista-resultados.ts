@@ -21,7 +21,10 @@ export class ListaResultadosProvider {
       {id_cidade: 15, nome: 'Arcoverde'},
       {id_cidade: 32, nome: 'Cabo de Santo Agostinho'},
       {id_cidade: 46, nome: 'Caruaru'},
-      {id_cidade: 45, nome: 'Carpina'}
+      {id_cidade: 45, nome: 'Carpina'},
+      {id_cidade: 26, nome: 'Bonito'},
+      {id_cidade: 38, nome: 'Camaragibe'},
+      {id_cidade: 169, nome: 'Tamandaré'},
   ]
 
   }
