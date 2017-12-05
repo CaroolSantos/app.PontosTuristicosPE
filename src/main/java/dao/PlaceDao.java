@@ -93,6 +93,20 @@ public class PlaceDao {
         return places;
     }
 
+    public List<Place> searchPlaceByName(String name) {
+        Session session = sessionFactory.openSession();
+        session.beginTransaction();
+
+        List<Place> places = session.createQuery("SELECT p FROM Place p WHERE p.name like :name")
+            .setParameter("name", "%" + name + "%")
+            .list();
+
+        session.getTransaction().commit();
+        session.close();
+
+        return places;
+    }
+
     public List<Place> listAll() {
         Session session = sessionFactory.openSession();
         session.beginTransaction();

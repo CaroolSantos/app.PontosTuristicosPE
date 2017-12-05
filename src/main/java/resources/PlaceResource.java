@@ -85,4 +85,19 @@ public class PlaceResource {
     return Response.ok(entity).build();
   }
 
+  @GET
+  @Path("/search")
+  @Produces(MediaType.APPLICATION_JSON)
+  public Response get(@QueryParam("q") String query) {
+
+    PlaceDao placeDao = new PlaceDao();
+
+    List<Place> places = placeDao.searchPlaceByName(query);
+
+    GenericEntity<List<Place>> entity = new GenericEntity<List<Place>>(places) {
+    };
+
+    return Response.ok(entity).build();
+  }
+
 }
