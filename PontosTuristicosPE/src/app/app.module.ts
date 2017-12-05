@@ -1,3 +1,5 @@
+import { CadastroUsuarioPage } from './../pages/cadastro-usuario/cadastro-usuario';
+import { LoginPage } from './../pages/login/login';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
@@ -20,7 +22,9 @@ import { MatchHeightDirective } from '../directives/match-height/match-height';
     HomePage,
     ListPage,
     ListaResultadosPage,
-    MatchHeightDirective
+    MatchHeightDirective,
+    LoginPage,
+    CadastroUsuarioPage
   ],
   imports: [
     BrowserModule,
@@ -32,7 +36,9 @@ import { MatchHeightDirective } from '../directives/match-height/match-height';
     MyApp,
     HomePage,
     ListPage,
-    ListaResultadosPage
+    ListaResultadosPage,
+    LoginPage,
+    CadastroUsuarioPage
   ],
   providers: [
     StatusBar,

@@ -1,0 +1,36 @@
+<ion-content>
+
+     <ion-row>
+       <ion-col>
+         <img src="assets/logo-app.png" />
+       </ion-col>
+     </ion-row>
+  
+     <ion-row>
+       <ion-col>
+         <ion-list>
+          <form [formGroup]="loginForm">
+           <ion-item>
+             <ion-label>Usuário</ion-label>
+             <ion-input type="email" ></ion-input>
+           </ion-item>
+  
+           <ion-item>
+             <ion-label>Senha</ion-label>
+             <ion-input type="password"></ion-input>
+           </ion-item>
+          </form>
+         </ion-list>
+       </ion-col>
+     </ion-row>
+  
+     <ion-row>
+       <ion-col>
+         <button ion-button class="login-button" (click)="entrar()">Login</button>
+       </ion-col>
+     </ion-row>
+     <ion-row>
+      <button ion-button class="novaconta" clear (click)="novaConta()">Criar nova conta</button>
+    </ion-row>
+  
+ </ion-content>

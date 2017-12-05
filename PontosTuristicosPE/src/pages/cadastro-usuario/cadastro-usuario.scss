@@ -1,0 +1,44 @@
+.ios,
+.md {
+  page-cadastro-usuario {
+    ion-content{
+      background-color: #a9d4e6;
+    }
+ 
+    img {
+      width: 80%;
+      height: auto;
+      margin: 0 auto;
+      padding-top: 60px;
+    }
+   
+    ion-row {
+      // align-items: center;
+      text-align: center;
+    }
+    ion-item {
+      border-radius: 30px !important;
+      padding-left: 10px !important;
+      margin-bottom: 10px;
+      background-color: #f6f6f6;
+      opacity: 0.7;
+      font-size: 0.9em;
+    }
+    ion-list {
+      margin: 0;
+    }
+    .login-button {
+      width: 100%;
+      border-radius: 30px;
+      font-size: 0.9em;
+      border: 1px solid #fff;
+      background-color: #39acdc;
+      margin-top:-10px;
+    }
+    .novaconta {
+      width: 100%;
+      color: #112267;
+      font-size: 0.9em;
+    }
+  }
+}
