@@ -15,6 +15,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { ListaResultadosProvider } from '../providers/lista-resultados/lista-resultados';
 
 import { MatchHeightDirective } from '../directives/match-height/match-height';
+import { UsuarioProvider } from '../providers/usuario/usuario';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { MatchHeightDirective } from '../directives/match-height/match-height';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    ListaResultadosProvider
+    ListaResultadosProvider,
+    UsuarioProvider
   ]
 })
 export class AppModule {}

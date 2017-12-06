@@ -12,12 +12,12 @@
           <form [formGroup]="loginForm">
            <ion-item>
              <ion-label>Usuário</ion-label>
-             <ion-input type="email" ></ion-input>
+             <ion-input type="email" formControlName="Email"></ion-input>
            </ion-item>
   
            <ion-item>
              <ion-label>Senha</ion-label>
-             <ion-input type="password"></ion-input>
+             <ion-input type="password" formControlName="Password"></ion-input>
            </ion-item>
           </form>
          </ion-list>
