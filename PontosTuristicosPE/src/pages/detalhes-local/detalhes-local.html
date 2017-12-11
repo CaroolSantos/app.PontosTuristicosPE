@@ -1,0 +1,33 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Detalhes</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="background-page">
+
+  <ion-item text-wrap>
+    <h1>{{local.name}}</h1>
+    <p>{{local.category.name}}</p>
+  </ion-item>
+  <ion-col align-self-stretch>
+    <ion-list>
+      <ion-item text-wrap>
+        <h2>
+          <b>Descrição:</b> {{local.description}}</h2>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="heart"></ion-icon>
+        Adicionar aos Favoritos
+      </ion-item>
+      <ion-item text-wrap>
+        <ion-icon name="locate"></ion-icon>
+        {{local.address}}
+      </ion-item>
+    </ion-list>
+
+  </ion-col>
+</ion-content>

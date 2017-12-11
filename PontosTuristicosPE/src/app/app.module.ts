@@ -1,3 +1,4 @@
+import { DetalhesLocalPage } from './../pages/detalhes-local/detalhes-local';
 import { CadastroUsuarioPage } from './../pages/cadastro-usuario/cadastro-usuario';
 import { LoginPage } from './../pages/login/login';
 import { BrowserModule } from '@angular/platform-browser';
@@ -25,7 +26,8 @@ import { UsuarioProvider } from '../providers/usuario/usuario';
     ListaResultadosPage,
     MatchHeightDirective,
     LoginPage,
-    CadastroUsuarioPage
+    CadastroUsuarioPage,
+    DetalhesLocalPage
   ],
   imports: [
     BrowserModule,
@@ -39,7 +41,8 @@ import { UsuarioProvider } from '../providers/usuario/usuario';
     ListPage,
     ListaResultadosPage,
     LoginPage,
-    CadastroUsuarioPage
+    CadastroUsuarioPage,
+    DetalhesLocalPage
   ],
   providers: [
     StatusBar,

@@ -13,7 +13,7 @@
       <ion-icon name="search" ></ion-icon>Pesquisar</button>
     <br>
     <ion-list>
-        <ion-item  *ngFor="let local of resultados" >
+        <ion-item  *ngFor="let local of resultados"  (click)="abrirDetalhes(local)">
           <h2 text-wrap><b>{{local.name}}</b></h2>
           <p>{{local.description}}</p>
           <p><ion-icon name="pin" item-start></ion-icon>{{local.address}}</p>
