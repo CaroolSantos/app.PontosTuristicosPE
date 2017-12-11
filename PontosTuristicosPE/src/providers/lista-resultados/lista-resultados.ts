@@ -8,6 +8,7 @@ import 'rxjs/Rx';
 let apiListaUrl = "http://localhost:8100/api/places/category";
 let apiListaUrlCategoriaCidade = "http://localhost:8100/api/places?category=";
 let apiDetalhesLocalUrl = "http://localhost:8100/api/places";
+let apiNomeLocal = "http://localhost:8100/api/places/search?q=";
 
 @Injectable()
 export class ListaResultadosProvider {
@@ -57,6 +58,12 @@ export class ListaResultadosProvider {
     return this.http.get(url)
       .map(res => res.json())
       .catch(res => { return Observable.throw(res) });
+  }
+
+  buscarPorNome(stringBusca){
+    return this.http.get(encodeURI(apiNomeLocal + stringBusca))
+    .map(res => res.json())
+    .catch(res => { return Observable.throw(res); });
   }
 
 }

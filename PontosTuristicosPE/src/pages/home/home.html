@@ -8,7 +8,7 @@
 </ion-header>
 
 <ion-content class="background-page">
-  <ion-searchbar [showCancelButton]="true" placeholder="O que você procura?" (ionInput)="updateSearch()" (ionCancel)="dismiss()"></ion-searchbar>
+  <ion-searchbar [showCancelButton]="true" placeholder="O que você procura?" [(ngModel)]="stringBusca" (ionCancel)="dismiss()"></ion-searchbar>
   <ion-searchbar [showCancelButton]="true" placeholder="Informe a cidade" [(ngModel)]="searchTerm" [formControl]="searchControl" (ionCancel)="dismiss()"></ion-searchbar>
 
   <ion-list *ngIf="searchTerm.length>2 && cidadeSelecionada==false">
@@ -18,8 +18,8 @@
   </ion-list>
 
 
-  <button ion-button block icon-left class="btn">
-    <ion-icon name="search"></ion-icon>Pesquisar</button>
+  <button ion-button block icon-left class="btn" (click)="pesquisarLocal(stringBusca)">
+    <ion-icon name="search"></ion-icon >Pesquisar</button>
   <br>
   <ion-row myMatchHeight="card">
     <ion-col align-self-stretch col-6 col-md-6 col-lg-3 col-xl-3>

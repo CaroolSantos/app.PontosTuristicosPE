@@ -8,8 +8,8 @@
 
 
 <ion-content class="background-page">
-    <ion-searchbar [showCancelButton]="true" placeholder="Digite um local" (ionInput)="updateSearch()" (ionCancel)="dismiss()"></ion-searchbar>
-    <button ion-button block icon-left class="btn">
+    <ion-searchbar [showCancelButton]="true" placeholder="Digite um local" [(ngModel)]="stringBusca" (ionCancel)="dismiss()"></ion-searchbar>
+    <button ion-button block icon-left class="btn" (click)="pesquisarLocal(stringBusca)">
       <ion-icon name="search" ></ion-icon>Pesquisar</button>
     <br>
     <ion-list>
