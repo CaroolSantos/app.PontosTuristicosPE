@@ -5,10 +5,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { HttpModule } from '@angular/http';
+import { IonicStorageModule } from '@ionic/storage';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
 import { ListaResultadosPage } from './../pages/lista-resultados/lista-resultados';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -17,39 +17,43 @@ import { ListaResultadosProvider } from '../providers/lista-resultados/lista-res
 
 import { MatchHeightDirective } from '../directives/match-height/match-height';
 import { UsuarioProvider } from '../providers/usuario/usuario';
+import { FavoritosPage } from '../pages/favoritos/favoritos';
+import { FavoritosProvider } from '../providers/favoritos/favoritos';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    ListPage,
     ListaResultadosPage,
     MatchHeightDirective,
     LoginPage,
     CadastroUsuarioPage,
-    DetalhesLocalPage
+    DetalhesLocalPage,
+    FavoritosPage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    HttpModule
+    HttpModule,
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     HomePage,
-    ListPage,
     ListaResultadosPage,
     LoginPage,
     CadastroUsuarioPage,
-    DetalhesLocalPage
+    DetalhesLocalPage,
+    FavoritosPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ListaResultadosProvider,
-    UsuarioProvider
+    UsuarioProvider,
+    FavoritosProvider
   ]
 })
 export class AppModule {}

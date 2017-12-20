@@ -19,9 +19,13 @@
         <h2>
           <b>Descrição:</b> {{local.description}}</h2>
       </ion-item>
-      <ion-item>
+      <ion-item *ngIf="!favorito" (click)="addfavorito()">
         <ion-icon name="heart"></ion-icon>
         Adicionar aos Favoritos
+      </ion-item>
+      <ion-item *ngIf="favorito" (click)="rmfavorito()">
+        <ion-icon class="favorito" name="heart"></ion-icon>
+        Remover dos Favoritos
       </ion-item>
       <ion-item text-wrap>
         <ion-icon name="locate"></ion-icon>

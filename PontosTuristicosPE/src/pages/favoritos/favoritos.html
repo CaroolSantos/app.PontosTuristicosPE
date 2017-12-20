@@ -1,0 +1,20 @@
+
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Meus Favoritos</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="background-page">
+    <ion-list>
+        <ion-item  *ngFor="let local of resultados"  (click)="abrirDetalhes(local)">
+          <h2 text-wrap><b>{{local.name}}</b></h2>
+          <p>{{local.description}}</p>
+          <p><ion-icon name="pin" item-start></ion-icon>{{local.address}}</p>
+        </ion-item>
+      </ion-list>
+
+</ion-content>
