@@ -68,7 +68,7 @@ public class PlaceDao {
         Session session = sessionFactory.openSession();
         session.beginTransaction();
 
-        List<Place> places = session.createQuery("SELECT p FROM Place p WHERE p.category.id=:category_id")
+        List<Place> places = session.createQuery("SELECT p FROM Place p WHERE p.category.id=:category_id AND p.approved=1")
                 .setParameter("category_id", categoryID)
                 .list();
 
@@ -82,9 +82,22 @@ public class PlaceDao {
         Session session = sessionFactory.openSession();
         session.beginTransaction();
 
-        List<Place> places = session.createQuery("SELECT p FROM Place p WHERE p.category.id=:category_id AND p.city.id=:city_id")
+        List<Place> places = session.createQuery("SELECT p FROM Place p WHERE p.category.id=:category_id AND p.city.id=:city_id AND p.approved=1")
             .setParameter("category_id", categoryID)
             .setParameter("city_id", cityID)
+            .list();
+
+        session.getTransaction().commit();
+        session.close();
+
+        return places;
+    }
+
+    public List<Place> listPendingPlaces() {
+        Session session = sessionFactory.openSession();
+        session.beginTransaction();
+
+        List<Place> places = session.createQuery("SELECT p FROM Place p WHERE p.approved=0")
             .list();
 
         session.getTransaction().commit();
@@ -97,7 +110,7 @@ public class PlaceDao {
         Session session = sessionFactory.openSession();
         session.beginTransaction();
 
-        List<Place> places = session.createQuery("SELECT p FROM Place p WHERE p.name like :name")
+        List<Place> places = session.createQuery("SELECT p FROM Place p WHERE p.name like :name AND p.approved=1")
             .setParameter("name", "%" + name + "%")
             .list();
 
@@ -111,7 +124,7 @@ public class PlaceDao {
         Session session = sessionFactory.openSession();
         session.beginTransaction();
 
-        List<Place> places = session.createQuery("SELECT p FROM Place p").list();
+        List<Place> places = session.createQuery("SELECT p FROM Place p AND p.approved=1").list();
 
         session.getTransaction().commit();
         session.close();
