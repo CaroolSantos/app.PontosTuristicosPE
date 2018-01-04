@@ -74,6 +74,11 @@ public class Place implements Serializable {
   @ManyToOne(optional = false, fetch = FetchType.EAGER)
   private City city;
 
+  @Basic(optional = false)
+  @NotNull
+  @Column(name = "APROVADO")
+  private Boolean approved;
+
   public Place(Integer id) {
     this.id = id;
   }
@@ -164,6 +169,14 @@ public class Place implements Serializable {
 
   public void setCity(City city) {
     this.city = city;
+  }
+
+  public Boolean getApproved() {
+    return approved;
+  }
+
+  public void setApproved(Boolean approved) {
+    this.approved = approved;
   }
 
   @Override

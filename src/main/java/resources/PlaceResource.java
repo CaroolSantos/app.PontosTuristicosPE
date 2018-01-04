@@ -70,6 +70,31 @@ public class PlaceResource {
     return Response.ok(entity).build();
   }
 
+  @POST
+  @Path("/")
+  @Produces(MediaType.APPLICATION_JSON)
+  public Response create(Place place) {
+
+    PlaceDao placeDao = new PlaceDao();
+
+    place.setApproved(false);
+    placeDao.save(place);
+
+    return Response.ok(place).build();
+  }
+
+  @PUT
+  @Path("/")
+  @Produces(MediaType.APPLICATION_JSON)
+  public Response update(Place place) {
+
+    PlaceDao placeDao = new PlaceDao();
+
+    placeDao.update(place);
+
+    return Response.ok(place).build();
+  }
+
   @GET
   @Path("/")
   @Produces(MediaType.APPLICATION_JSON)
@@ -78,6 +103,21 @@ public class PlaceResource {
     PlaceDao placeDao = new PlaceDao();
 
     List<Place> places = placeDao.listByCategoryAndCity(categoryId, cityId);
+
+    GenericEntity<List<Place>> entity = new GenericEntity<List<Place>>(places) {
+    };
+
+    return Response.ok(entity).build();
+  }
+
+  @GET
+  @Path("/pending")
+  @Produces(MediaType.APPLICATION_JSON)
+  public Response pendentes() {
+
+    PlaceDao placeDao = new PlaceDao();
+
+    List<Place> places = placeDao.listPendingPlaces();
 
     GenericEntity<List<Place>> entity = new GenericEntity<List<Place>>(places) {
     };
