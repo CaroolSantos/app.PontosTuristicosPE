@@ -19,6 +19,8 @@ import { MatchHeightDirective } from '../directives/match-height/match-height';
 import { UsuarioProvider } from '../providers/usuario/usuario';
 import { FavoritosPage } from '../pages/favoritos/favoritos';
 import { FavoritosProvider } from '../providers/favoritos/favoritos';
+import { IndicacaoPage } from '../pages/indicacao/indicacao';
+import { IndicacaoLocalProvider } from '../providers/indicacao-local/indicacao-local';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,8 @@ import { FavoritosProvider } from '../providers/favoritos/favoritos';
     LoginPage,
     CadastroUsuarioPage,
     DetalhesLocalPage,
-    FavoritosPage
+    FavoritosPage,
+    IndicacaoPage
   ],
   imports: [
     BrowserModule,
@@ -45,7 +48,8 @@ import { FavoritosProvider } from '../providers/favoritos/favoritos';
     LoginPage,
     CadastroUsuarioPage,
     DetalhesLocalPage,
-    FavoritosPage
+    FavoritosPage,
+    IndicacaoPage
   ],
   providers: [
     StatusBar,
@@ -53,7 +57,8 @@ import { FavoritosProvider } from '../providers/favoritos/favoritos';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ListaResultadosProvider,
     UsuarioProvider,
-    FavoritosProvider
+    FavoritosProvider,
+    IndicacaoLocalProvider
   ]
 })
 export class AppModule {}
