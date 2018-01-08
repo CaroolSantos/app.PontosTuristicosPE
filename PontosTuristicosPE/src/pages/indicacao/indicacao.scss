@@ -3,4 +3,12 @@ page-indicacao {
         background-color: rgb(216, 212, 212);
         }
 
+        #map {
+            height: 130px;
+            z-index: 9999;
+        }
+}
+
+ion-app._gmaps_cdv_ .nav-decor{
+	background-color: transparent !important;
 }

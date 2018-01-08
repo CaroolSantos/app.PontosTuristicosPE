@@ -15,48 +15,79 @@
     </ion-item>
 
     <ion-item>
-        <ion-label>Selecione a categoria do local</ion-label>
-        <ion-select [(ngModel)]="idCategoria">
-          <ion-option value="13">Hospedagem</ion-option>
-          <ion-option value="15">Locadora de Veículo</ion-option>
-          <ion-option value="24">Agência de Turismo</ion-option>
-          <ion-option value="14">Hospitais</ion-option>
-          <ion-option value="21">Restaurantes</ion-option>
-          <ion-option value="5">Bares e Cachaçarias</ion-option>
-          <ion-option value="4">Praias</ion-option>
-          <ion-option value="18">Passeios Nauticos</ion-option>
-          <ion-option value="3">Artesanato</ion-option>
-          <ion-option value="16">Mercados e Feiras Livres</ion-option>
-          <ion-option value="17">Museus e Centros Culturais</ion-option>
-          <ion-option value="8">Cinemas e Teatros</ion-option>
-          <ion-option value="7">Casas Noturnas</ion-option>
-          <ion-option value="19">Praças e Parques</ion-option>
-          <ion-option value="22">Shopping Center</ion-option>
-          <ion-option value="12">Eventos e Agências de Turismo</ion-option>
-          <ion-option value="23">Trilhas Ecológicas</ion-option>
+      <ion-label>Selecione a categoria do local</ion-label>
+      <ion-select [(ngModel)]="idCategoria">
+        <ion-option value="13">Hospedagem</ion-option>
+        <ion-option value="15">Locadora de Veículo</ion-option>
+        <ion-option value="24">Agência de Turismo</ion-option>
+        <ion-option value="14">Hospitais</ion-option>
+        <ion-option value="21">Restaurantes</ion-option>
+        <ion-option value="5">Bares e Cachaçarias</ion-option>
+        <ion-option value="4">Praias</ion-option>
+        <ion-option value="18">Passeios Nauticos</ion-option>
+        <ion-option value="3">Artesanato</ion-option>
+        <ion-option value="16">Mercados e Feiras Livres</ion-option>
+        <ion-option value="17">Museus e Centros Culturais</ion-option>
+        <ion-option value="8">Cinemas e Teatros</ion-option>
+        <ion-option value="7">Casas Noturnas</ion-option>
+        <ion-option value="19">Praças e Parques</ion-option>
+        <ion-option value="22">Shopping Center</ion-option>
+        <ion-option value="12">Eventos e Agências de Turismo</ion-option>
+        <ion-option value="23">Trilhas Ecológicas</ion-option>
       </ion-select>
-      </ion-item>
+    </ion-item>
 
-      <ion-item>
-          <ion-label stacked>Endereço do local</ion-label>
-          <ion-input type="text" [(ngModel)]="local.address"></ion-input>
-        </ion-item>
+    <ion-item>
+      <ion-label stacked>Endereço do local</ion-label>
+      <ion-input type="text" [(ngModel)]="local.address"></ion-input>
+    </ion-item>
 
-        <ion-item>
-            <ion-label>Selecione a cidade</ion-label>
-            <ion-select [(ngModel)]="idCidade">
-                 <ion-option value="134">Recife</ion-option>
-                 <ion-option value="113">Olinda</ion-option>
-                 <ion-option value="15">Arcoverde</ion-option>
-                 <ion-option value="32">Cabo de Santo Agostinho</ion-option>
-                 <ion-option value="46">Caruaru</ion-option>
-                 <ion-option value="45">Carpina</ion-option>
-                 <ion-option value="26">Bonito</ion-option>
-                 <ion-option value="38">Camaragibe</ion-option>
-                 <ion-option value="169">Tamandaré</ion-option>
-              
-          </ion-select>
-          </ion-item> 
+    <div #map id="map"></div>
+
+    <ion-item>
+      <ion-label>Selecione a cidade</ion-label>
+      <ion-select [(ngModel)]="idCidade">
+        <ion-option value="134">Recife</ion-option>
+        <ion-option value="113">Olinda</ion-option>
+        <ion-option value="15">Arcoverde</ion-option>
+        <ion-option value="32">Cabo de Santo Agostinho</ion-option>
+        <ion-option value="46">Caruaru</ion-option>
+        <ion-option value="45">Carpina</ion-option>
+        <ion-option value="26">Bonito</ion-option>
+        <ion-option value="38">Camaragibe</ion-option>
+        <ion-option value="169">Tamandaré</ion-option>
+        <ion-option value="62">Fernando de Noronha</ion-option>
+        <ion-option value="68">Garanhuns </ion-option>
+        <ion-option value="72">Gravatá </ion-option>
+        <ion-option value="76">Igarassu</ion-option>
+        <ion-option value="78">Ilha de Itamaracá</ion-option>
+        <ion-option value="81">Ipojuca</ion-option>
+        <ion-option value="87">Itapissuma </ion-option>
+        <ion-option value="126">Pesqueira </ion-option>
+        <ion-option value="112">Nazaré da Mata</ion-option>
+        <ion-option value="89">Jaboatão dos Guararapes</ion-option>
+        <ion-option value="2">Abreu e Lima</ion-option>
+        <ion-option value="19">Belém do São Francisco</ion-option>
+        <ion-option value="22">Bezerros </ion-option>
+        <ion-option value="29">Brejo da Madre de Deus</ion-option>
+        <ion-option value="39">Camocim de São Félix</ion-option>
+        <ion-option value="145">Santa Cruz do Capibaribe</ion-option>
+        <ion-option value="150">São Benedito do Sul</ion-option>
+        <ion-option value="151">São Bento do Una</ion-option>
+        <ion-option value="158">São Lourenço da Mata</ion-option>
+        <ion-option value="177">Triunfo </ion-option>
+        <ion-option value="185">Vitória de Santo Antão</ion-option>
+        <ion-option value="25">Bom Jardim</ion-option>
+        <ion-option value="175">Tracunhaém </ion-option>
+        <ion-option value="173">Timbaúba </ion-option>
+        <ion-option value="160">Serra Talhada</ion-option>
+        <ion-option value="17">Barreiros </ion-option>
+        <ion-option value="128">Petrolina </ion-option>
+        <ion-option value="121">Parnamirim </ion-option>
+        <ion-option value="90">Jaqueira </ion-option>
+
+      </ion-select>
+    </ion-item>
 
     <ion-item>
       <ion-label stacked>Descrição do local</ion-label>
@@ -67,7 +98,7 @@
 </ion-content>
 
 <ion-footer>
-    <ion-toolbar >
-      <button  color="primary" ion-button full (click)="indicarLocal()">Indicar Local</button>
-    </ion-toolbar>
-  </ion-footer>
+  <ion-toolbar>
+    <button color="primary" ion-button full (click)="indicarLocal()">Indicar Local</button>
+  </ion-toolbar>
+</ion-footer>

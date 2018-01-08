@@ -6,6 +6,8 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { HttpModule } from '@angular/http';
 import { IonicStorageModule } from '@ionic/storage';
+import { Geolocation } from '@ionic-native/geolocation';
+import { NativeGeocoder, NativeGeocoderReverseResult, NativeGeocoderForwardResult } from '@ionic-native/native-geocoder';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -58,7 +60,9 @@ import { IndicacaoLocalProvider } from '../providers/indicacao-local/indicacao-l
     ListaResultadosProvider,
     UsuarioProvider,
     FavoritosProvider,
-    IndicacaoLocalProvider
+    IndicacaoLocalProvider,
+    Geolocation,
+    NativeGeocoder
   ]
 })
 export class AppModule {}
