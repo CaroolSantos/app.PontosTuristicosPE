@@ -5,7 +5,7 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/Rx';
 
 
-let apiUrlIndicacao = "http://localhost:8100/api/places/";
+let apiUrlIndicacao = "https://turismope.herokuapp.com/api/places/";
 
 @Injectable()
 export class IndicacaoLocalProvider {

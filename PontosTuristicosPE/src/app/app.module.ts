@@ -2,7 +2,7 @@ import { DetalhesLocalPage } from './../pages/detalhes-local/detalhes-local';
 import { CadastroUsuarioPage } from './../pages/cadastro-usuario/cadastro-usuario';
 import { LoginPage } from './../pages/login/login';
 import { BrowserModule } from '@angular/platform-browser';
-import { ErrorHandler, NgModule } from '@angular/core';
+import { ErrorHandler, NgModule, ChangeDetectorRef } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { HttpModule } from '@angular/http';
 import { IonicStorageModule } from '@ionic/storage';
@@ -41,6 +41,7 @@ import { IndicacaoLocalProvider } from '../providers/indicacao-local/indicacao-l
     IonicModule.forRoot(MyApp),
     HttpModule,
     IonicStorageModule.forRoot()
+    
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -62,7 +63,7 @@ import { IndicacaoLocalProvider } from '../providers/indicacao-local/indicacao-l
     FavoritosProvider,
     IndicacaoLocalProvider,
     Geolocation,
-    NativeGeocoder
+    NativeGeocoder    
   ]
 })
 export class AppModule {}

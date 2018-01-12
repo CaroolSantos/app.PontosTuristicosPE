@@ -1,10 +1,11 @@
 import { IndicacaoLocalProvider } from './../../providers/indicacao-local/indicacao-local';
-import { Component, ViewChild, ElementRef } from '@angular/core';
+import { Component, ViewChild, ElementRef, ChangeDetectorRef } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AlertController } from 'ionic-angular/components/alert/alert-controller';
 import { HomePage } from '../home/home';
 import { Geolocation } from '@ionic-native/geolocation';
 import { NativeGeocoder, NativeGeocoderReverseResult, NativeGeocoderForwardResult } from '@ionic-native/native-geocoder';
+
 
 declare var google;
 
@@ -22,7 +23,7 @@ export class IndicacaoPage {
   idCategoria:number;
  
   constructor(public navCtrl: NavController, public navParams: NavParams, public indicacaoServico: IndicacaoLocalProvider, 
-    public alertCtrl: AlertController, private nativeGeocoder: NativeGeocoder, public geolocation: Geolocation) {
+    public alertCtrl: AlertController, private nativeGeocoder: NativeGeocoder, public geolocation: Geolocation, public cDetect: ChangeDetectorRef) {
   }
 
   ionViewDidLoad() {
@@ -31,9 +32,10 @@ export class IndicacaoPage {
   }
 
   loadMap() {
-    
+    console.log('entrou no loadMap');
         this.geolocation.getCurrentPosition().then((position) => {
-    
+          console.log(position.coords.latitude + ' - ' + position.coords.longitude);
+
           let latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
     
           let mapOptions = {
@@ -73,10 +75,11 @@ export class IndicacaoPage {
         this.nativeGeocoder.reverseGeocode(latitude, longitude)
           .then((result: NativeGeocoderReverseResult) => {
             console.log('The address is ' + JSON.stringify(result));
-            this.local.address = result.locality + ", " + result.subLocality + " - " + result.countryName;
+            this.local.address = result.thoroughfare + ", " + result.subThoroughfare + " - " +  result.subLocality + ", " + result.locality;
     
             this.local.latitude = latitude;
             this.local.longitude = longitude;
+            this.cDetect.detectChanges();
     
           })
           .catch((error: any) => console.log("erro no geocoder reverso" + JSON.stringify(error)));
