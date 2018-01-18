@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { Http, RequestOptions, Headers } from '@angular/http';
 import 'rxjs/add/operator/map';
 
-let registroUrl = "http://localhost:8100/api/users";
-let loginUrl = "http://localhost:8100/api/users/login";
+let registroUrl = "https://turismope.herokuapp.com/api/users";
+let loginUrl = "https://turismope.herokuapp.com/api/users/login";
 
 @Injectable()
 export class UsuarioProvider {
