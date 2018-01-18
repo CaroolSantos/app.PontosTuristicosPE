@@ -27,6 +27,11 @@
         <ion-icon class="favorito" name="heart"></ion-icon>
         Remover dos Favoritos
       </ion-item>
+
+      <rating [(ngModel)]="avaliacao" 
+        readOnly="true">
+      </rating>
+
       <ion-item text-wrap>
         <ion-icon name="locate"></ion-icon>
         {{local.address}}

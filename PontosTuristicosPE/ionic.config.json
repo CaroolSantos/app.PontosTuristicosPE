@@ -4,6 +4,13 @@
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}
-  }
+  },
+
+  "proxies": [
+{
+"path": "/api",
+"proxyUrl": "https://turismope.herokuapp.com/api"
+}
+]
   
 }

@@ -1,6 +1,6 @@
 page-detalhes-local {
     .background-page {
-        background-color: rgb(216, 212, 212);
+        background-color: rgb(255, 255, 255);
         }
     .favorito{
         color: red;
@@ -9,7 +9,21 @@ page-detalhes-local {
     #map {
 		height: 230px;
 		z-index: 9999;
-	}
+    }
+    
+    ul {
+        padding: 0px;
+      
+        &.rating li {
+          padding: 5px 10px !important;
+          background: none;
+          color: #ffb400;
+      
+          ion-icon {
+            font-size: 30px;
+          }
+        }
+      }
 
 }
 

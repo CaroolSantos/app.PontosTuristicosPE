@@ -5,10 +5,10 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/Rx';
 
 
-let apiListaUrl = "https://turismope.herokuapp.com/api/places/category";
-let apiListaUrlCategoriaCidade = "https://turismope.herokuapp.com/api/places?category=";
-let apiDetalhesLocalUrl = "https://turismope.herokuapp.com/api/places/";
-let apiNomeLocal = "https://turismope.herokuapp.com/api/places/search?q=";
+let apiListaUrl = "http://localhost:8100/api/places/category";
+let apiListaUrlCategoriaCidade = "http://localhost:8100/api/places?category=";
+let apiDetalhesLocalUrl = "http://localhost:8100/api/places";
+let apiNomeLocal = "http://localhost:8100/api/places/search?q=";
 
 @Injectable()
 export class ListaResultadosProvider {
